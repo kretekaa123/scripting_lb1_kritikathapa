@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <p id="p1">First Paragraph</p>
+    <p id="p2">Second Paragraph</p>
+    <p id="p3">Third Paragraph</p>
+    <p id="p4">Fourth Paragraph</p>
+
+    <script>
+        // a. Get first paragraph using tag name
+        let firstPara = document.querySelector("p");
+        console.log(firstPara);
+
+        // b. Get each paragraph using id
+        let para1 = document.querySelector("#p1");
+        let para2 = document.querySelector("#p2");
+        let para3 = document.querySelector("#p3");
+        let para4 = document.querySelector("#p4");
+
+        // c. Get all paragraphs as NodeList
+        let paragraphs = document.querySelectorAll("p");
+
+        // d. Loop and display text content
+        paragraphs.forEach(function(p) {
+            console.log(p.textContent);
+        });
+
+        // e. Set text for fourth paragraph
+        para4.textContent = "Fourth Paragraph";
+
+        // f. Set id and class attributes
+        para1.setAttribute("class", "first");
+        para2.setAttribute("class", "second");
+        para3.id = "third";
+        para4.className = "fourth";
+
+        // g. Change style of each paragraph
+        paragraphs.forEach(function(p) {
+            p.style.backgroundColor = "lightgray";
+            p.style.border = "1px solid black";
+            p.style.fontSize = "20px";
+            p.style.fontFamily = "Arial";
+        });
+
+        // h. First and third green, second and fourth red
+        paragraphs.forEach(function(p, index) {
+            if (index === 0 || index === 2) {
+                p.style.color = "green";
+            } else {
+                p.style.color = "red";
+            }
+        });
+
+        // i. Set text, id and class to each paragraph
+        paragraphs.forEach(function(p, index) {
+            p.textContent = "Paragraph " + (index + 1);
+            p.id = "para" + (index + 1);
+            p.className = "paragraph";
+        });
+    </script>
+
+</body>
+</html>

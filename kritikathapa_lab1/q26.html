@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    function tenMostFrequentWords(str) {
+        let words = str.toLowerCase().split(/\s+/);
+        let count = {};
+
+        words.forEach(word => {
+            count[word] = (count[word] || 0) + 1;
+        });
+
+        return Object.entries(count)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+    }
+
+    let str = prompt("Enter a string:");
+
+    console.log("Q26:", tenMostFrequentWords(str));
+</script>
+
+</body>
+</html>

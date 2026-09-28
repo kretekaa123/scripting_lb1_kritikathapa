@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    let dog = {};
+
+    console.log("Q24:", dog);
+
+    dog.name = "Lily";
+    dog.legs = 4;
+    dog.color = "Brown";
+    dog.age = 3;
+    dog.bark = function() {
+        return "woof woof";
+    };
+
+    console.log(dog.name);
+    console.log(dog.legs);
+    console.log(dog.color);
+    console.log(dog.age);
+    console.log(dog.bark());
+
+    dog.breed = "Husky";
+    dog.getDogInfo = function() {
+        return dog.name + " is a " + dog.breed;
+    };
+
+    console.log(dog.breed);
+    console.log(dog.getDogInfo());
+</script>
+
+</body>
+</html>

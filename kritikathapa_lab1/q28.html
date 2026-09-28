@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Challenge</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>JS Challenge</h1>
+    <h2>7 Days of JS Challenge</h2>
+
+    <ul>
+        <li>Python Challenge Done</li>
+        <li>JavaScript Challenge Ongoing</li>
+        <li>React Challenge Coming</li>
+        <li>Full Stack Challenge Coming</li>
+        <li>Data Analysis Challenge Coming</li>
+        <li>React Native Challenge Coming</li>
+        <li>Machine Learning Challenge Coming</li>
+    </ul>
+</div>
+
+<script>
+    let year = new Date().getFullYear();
+    document.querySelector("h1").innerHTML += " " + year;
+
+    // a. Change year color every 1 second
+    setInterval(function() {
+        document.querySelector("h1").style.color =
+            "#" + Math.floor(Math.random()*16777215).toString(16);
+    }, 1000);
+
+    // b. Change date/time background every second
+    let date = document.createElement("p");
+    date.innerHTML = new Date();
+    document.querySelector(".wrapper").appendChild(date);
+
+    setInterval(function() {
+        date.innerHTML = new Date();
+        date.style.background = "#" +
+            Math.floor(Math.random()*16777215).toString(16);
+    }, 1000);
+
+    // c, d, e. Set challenge colors
+    let li = document.querySelectorAll("li");
+
+    li.forEach(function(item) {
+        if (item.innerHTML.includes("Done"))
+            item.style.background = "green";
+        else if (item.innerHTML.includes("Ongoing"))
+            item.style.background = "yellow";
+        else
+            item.style.background = "red";
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<table border="1" id="table"></table>
+
+<script>
+let countries = [
+"Australia","Bhutan","Canada","China","Greece","Italy","Japan","Nepal","Norway","South Korea",
+"Switzerland","Thailand"
+];
+
+let table = document.getElementById("table");
+
+for (let i = 0; i < countries.length; i += 6) {
+    let row = table.insertRow();
+
+    for (let j = i; j < i + 6 && j < countries.length; j++)
+        row.insertCell().innerHTML = countries[j];
+}
+</script>
+
+</body>
+</html>
